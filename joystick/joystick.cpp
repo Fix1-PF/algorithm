@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -24,7 +25,23 @@ int main() {
 }
 
 int solution(string name) {
-    int answer = 0;
+	vector<bool> array_check(name.length(), false);
+    vector<int> distance(name.length(), 0);
+	int answer = 0;
+	
+	for(int i = 0; i < name.length(); i++) {
+		if(name[i] == 'A') {
+			array_check[i] = true;
+		}
+		answer += upDown(name[i]);
+	}
+	
+	int index = 0;
+	distance[0] = 0;
+	for(int i = index; i < name.length(); i++) {
+		
+	}
+	
     return answer;
 }
 
